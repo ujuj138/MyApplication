@@ -45,7 +45,11 @@ public class MainActivity extends AppCompatActivity {
 
             mediaPlayer.setDataSource(path);
 
-            mediaPlayer.setOnPreparedListener(new);
+            mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener(){
+                public void onPrepared(MediaPlayer mediaPlayer){
+                    mediaPlayer.start();
+                }
+            });
         }catch (IOException e){
             e.printStackTrace();
         }
